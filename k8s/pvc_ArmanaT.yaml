@@ -1,0 +1,19 @@
+# pvc_ArmanaT.yaml - Persistent Volume Claim for PostgreSQL
+# Author: ArmanaT
+# Description: Storage for PostgreSQL database
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: postgres-pvc
+  namespace: default
+  labels:
+    app: todo-postgres
+    author: ArmanaT
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: standard
