@@ -240,7 +240,7 @@ pipeline {
         always {
             echo '=== Pipeline completed ==='
             cleanWs()
-            // sh 'docker image prune -f || true'
+            sh 'docker image prune -f || true'
         }
 
         success {
