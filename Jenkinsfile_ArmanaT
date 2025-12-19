@@ -238,13 +238,11 @@ pipeline {
     // =========================================================================
     post {
         always {
+            node {
             echo '=== Pipeline completed ==='
-
-            // Clean workspace
             cleanWs()
-
-            // Clean Docker images to save space
             sh 'docker image prune -f || true'
+        }
         }
 
         success {
