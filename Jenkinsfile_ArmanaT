@@ -238,11 +238,9 @@ pipeline {
     // =========================================================================
     post {
         always {
-            node {
             echo '=== Pipeline completed ==='
             cleanWs()
             sh 'docker image prune -f || true'
-        }
         }
 
         success {
